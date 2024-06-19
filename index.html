@@ -6,7 +6,10 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body onload="myfunc()">
+    <div class="loader"></div>
+
+    <div class="grid">
     <p class="title">Image Grid</p>
     <div class="btn-sec">
         <button onclick="oneRowImg()">1</button>
@@ -50,6 +53,7 @@
             <img src="image/image12.jpg" alt="">
         </div>
     </div>
+</div>
     <script>
         var row=document.getElementsByClassName('row');
         function oneRowImg(){
@@ -69,6 +73,14 @@
                 row[i].style.msFlex='25%';
                 row[i].style.flex='25%'                
             }
+        }
+
+        function myfunc(){
+            var dispay=setTimeout(Showpage,5000)
+        }
+        function Showpage(){
+            document.getElementsByClassName('loader')[0].style.display='none';
+            document.getElementsByClassName('grid')[0].style.display='block';
         }
     </script>
 </body>
